@@ -13,14 +13,22 @@ describe('game', () => {
     game = new Game(glider);
   })
 
-  describe('.grid', () => {
-    it('gets the game grid', function() {
+  describe('getters', () => {
+    it('can get the game grid', function() {
       expect(game.grid).toEqual(glider);
+    });
+
+    it('can get the width', function() {
+      expect(game.width).toEqual(4);
+    });
+
+    it('can get the height', function() {
+      expect(game.height).toEqual(4);
     });
   });
 
   describe('#next', () => {
-    it('applies the rules of the game of life to the current state', () => {
+    it('advances each cell in the grid by one generation', () => {
       game.next();
       game.next();
       game.next();

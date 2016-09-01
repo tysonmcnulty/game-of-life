@@ -7,6 +7,14 @@ var Game = function(grid) {
   this._grid = padGrid.call(this,grid);
 };
 
+Object.defineProperty(Game.prototype, 'width', {
+  get: function() { return this._width - 2; }
+});
+
+Object.defineProperty(Game.prototype, 'height', {
+  get: function() { return this._height - 2; }
+});
+
 Object.defineProperty(Game.prototype, 'grid', {
   get: function() { return unpadGrid.call(this); }
 });
@@ -18,9 +26,7 @@ Game.prototype.next = function() {
     newGrid.push(updateRow.call(this,i));
   }
   newGrid.push(this._grid[0]);
-  console.log("Old grid: " + this._grid);
   this._grid = newGrid;
-  console.log("New grid: " + this._grid);
 };
 
 function updateRow(i) {
