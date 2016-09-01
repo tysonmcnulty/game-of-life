@@ -1,0 +1,11 @@
+{
+  "name": "game-of-life",
+  "version": "1.0.0",
+  "description": "Conway's game of life",
+  "main": "main.js",
+  "scripts": {
+    "test": "node jasmine-runner.js"
+  },
+  "author": "tyson.mcnulty@gmail.com",
+  "license": "ISC"
+}
